@@ -36,4 +36,13 @@ It is the cleaned dataset used to find the requested data form frontend user.
 It is trained model file is used by the app.py to predict the price and loaded
 using app.py.
 
-![5](https://user-images.githubusercontent.com/56357173/213859354-102918c1-ba71-403f-9ea7-ec5a725fbc52.png)
+![1](https://user-images.githubusercontent.com/56357173/213859374-802bf01c-7bc9-4217-88a6-e7ac12a873a5.png)
+
+![2](https://user-images.githubusercontent.com/56357173/213859377-974b3082-8fc8-432d-9c72-11dc1d92c478.png)
+
+![4](https://user-images.githubusercontent.com/56357173/213859381-38e09952-fa61-444d-b65f-d1ee6d9929aa.png)
+
+![5](https://user-images.githubusercontent.com/56357173/213859383-de1092f0-9ee4-4bfc-ae9f-19c13249ac22.png)
+
+
+
