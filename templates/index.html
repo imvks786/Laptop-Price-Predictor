@@ -1,0 +1,195 @@
+<html>
+<title>Welcome</title>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <script src="../static/select.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+   </script>
+</head>
+<body class='bg'  onload="hide()">
+<!--NAVIGATION BAR-->
+   {% include 'header.html' %}
+<!--NAVIGATION BAR ENDS HERE-->
+   <div class='w3-container'>
+      <form method="POST" action='/predict' class='w3-form w3-container'>
+         <h1 class='w3-center' style="color:white">Welcome</h1>
+         <br>
+         <!---BASIC CONFIGURATIONS---->
+         <div class='w3-container w3-white w3-round' id="first">
+            <!--FIRST HALF STARTS-->
+            <h3>Choose Some Basic Configurations</h3>
+            <hr>
+            <div class="w3-container">
+            <div class='w3-container w3-half'>
+               <label>Brand Name:</label>
+               <select name="brand_name" class='w3-input' id='b_name' onchange='m_load()' required>
+                  <option value="">Select Laptop Brand</option>
+                  {%for i in brand%}
+                  <option name="brand_name" value='{% print(i) %}'>{% print(i) %}</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>Processor:</label>
+               <select name="processor_brand" id="processor_brand" class='w3-input' onchange='p_load()' required>
+                  <option value="">Select Processor Brand</option>
+                  {%for i in processor_brand%}
+                  <option class='w3-input' value='{% print(i) %}'>{% print(i) %}</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>SSD:</label>
+               <select class='w3-input' name="ssd" required>
+                  {%for i in ssd%}
+                  <option value='{% print(i) %}'>{% print(i) %} GB</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>HDD:</label>
+               <select class='w3-input' name="hdd" required>
+                  {%for i in hdd%}
+                  <option value='{% print(i) %}'>{% print(i) %} GB</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>Graphics Card (GB):</label>
+               <select name="graphic_card_gb" class='w3-input' required>
+                  {%for i in graphic_card_gb%}
+                  <option value='{% print(i) %}'>{% print(i) %}</option>
+                  {%endfor %}
+               </select>
+               <br>
+            </div>
+            <!--SECOND HALF STARTS-->
+            <div class='w3-half'>
+               <label>Laptop Model:</label>
+               <select class='w3-input' id="model" name="model" required>
+                  <option value="">Select Laptop Model</option>
+               </select>
+               <br>
+               <label>Processor Model</label>
+               <select name="processor_name" id='p_model' class='w3-input' required>
+                  <option value="">Select Processor Model</option>
+               </select>
+               <br>
+               <label>Processor Generation:</label>
+               <select name="processor_gnrtn" class='w3-input' required>
+                  {%for i in processor_gnrtn%}
+                  <option value='{% print(i) %}'>{% print(i) %}</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>RAM:</label>
+               <select name="ram_gb" class='w3-input' required>
+                  {%for i in ram_gb%}
+                  <option value='{% print(i) %}'>{% print(i) %} GB</option>
+                  {%endfor %}
+               </select>
+               <br>
+               <label>RAM Version:</label>
+               <select name="ram_type" class='w3-input' required>
+                  {%for i in ram_type%}
+                  <option value='{% print(i) %}'>{% print(i) %}</option>
+                  {%endfor %}
+               </select>
+               <br>
+            </div>
+            </div>
+            <div id="error" class="w3-center w3-container"></div>
+            <hr>
+               <a onclick="display()" class="right w3-button w3-green w3-round w3-card-4 w3-center" id="next">NEXT >></a>
+            <br><br>
+         </div>
+   <br>
+      <!--EXTRA CONFIGURATIONS SECTION-->
+      <br>
+   <div class='w3-container w3-white w3-round' id="hide">
+      <!--FIRST HALF SECTION-->
+      <h2>Some Extra Details</h2>
+      <hr>
+      <div class="w3-container">
+      <div class='w3-half'>
+         <label>OS:</label>
+         <select name="os" class='w3-input' required>
+            <option value='Windows'>Windows 10,11</option>
+            <option value='DOS'>DOS</option>
+            <option value='Mac'>Mac</option>
+         </select>
+         <br>
+         <label>Display (inch):</label>
+         <select name="display_size" class='w3-input' required>
+            {%for i in display%}
+            <option value='{% print(i) %}'>{% print(i) %}</option>
+            {%endfor %}
+         </select>
+         <br>
+         <label>Work Type:</label>
+         <select name="type" class='w3-input' required>
+            <option value='ThinNlight'>Thin and Light</option>
+            <option value='Casual'>Casual</option>
+            <option value='Gaming'>Gaming</option>
+         </select>
+         <br>
+      </div>
+      <!--SECOND HALF SECTION STARTS-->
+      <div class='w3-half'>
+         <label>OS Architecture:</label>
+         <select name="os_bit" class='w3-input' required>
+            <option value='64-bit'>64-bit</option>
+            <option value='32-bit'>32-bit</option>
+         </select>
+         <br>
+         <label>Touchscreen:</label>
+         <select name="Touchscreen" class='w3-input' required>
+            <option value='No'>No</option>
+            <option value='Yes'>Yes</option>
+         </select>
+         <br>
+         <label>MS-OFFICE:</label>
+         <select name="msoffice" class='w3-input' required>
+            <option value='No'>No</option>
+            <option value='Yes'>Yes</option>
+         </select>
+         <br>
+      </div>
+   </div>
+   <hr>
+      <a onclick="back()" class="w3-button w3-green w3-round w3-card-4 w3-center left"><< BACK</a>
+      <button class='w3-center w3-button w3-red w3-round w3-card-4 right' type="submit">GET PRICE ></button>
+   <br>
+   <br>
+   </div>
+  
+</div>
+   
+   </form>
+   </div>
+   <!--FORM ENDS HERE-->
+   <script>
+      function hide(){
+         document.getElementById("hide").style.display = "none";
+      }
+      function display(){
+         var a = document.getElementById('b_name').value;
+         var b = document.getElementById('processor_brand').value;
+         if(a !== '' && b !== ''){
+            document.getElementById("first").style.display = "none";
+            document.getElementById("hide").style.display = "block";
+         }
+         else{
+            document.getElementById('error').innerHTML = "<b style='color:red'>Please Choose: </b><span>Brand Name, Processor.</span>";
+         }
+      }
+      function back(){
+         document.getElementById("hide").style.display = "none";
+         document.getElementById("first").style.display = "block";
+      }
+   </script>
+   <br>
+   <br>
+   <p class='w3-center' style="color:white"><b>NOTE: </b>The Predicted Data might be incorrect as its in Developement Stage.</p>
+<!--FOOTER SECTION-->
+   {% extends 'footer.html' %}
+   </div>
+</body>
+</html>

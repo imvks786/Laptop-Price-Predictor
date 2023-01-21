@@ -1,0 +1,241 @@
+<html>
+<title>Predicted Price</title>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class='bg'>
+  <!--NAVIGATION BAR STARTS HERE-->
+  {% include 'header.html' %}
+  <!--NAVIGATION BAR ENDS HERE-->
+
+  <div class='w3-container w3-center'>
+    <h2 style='color:white;'>Your Selected Configuration Exprected Price</h2>
+  </div>
+  <div class='w3-container'>
+<!--FIRST SECTION FOR LAPTOP INFORMATION-->
+    <div class="w3-container w3-card-4 w3-white w3-round r2">
+      <div class="row">
+        <div class="column w3-center">
+          <h3>
+          <img src="../static/laptop.png" style="height:100px;width:auto" />
+            {{ brand +" "+ model +" "+ processor_brand +" "+ processor_name +" "}}{{ display_size }}(inch)</h3>
+        </div>
+        <div class="column w3-center">
+          {% if brand == 'HP' %}
+          <h1><img src='../static/hp.png' style='height:100px;width:auto' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'DELL' %}
+          <h1><img src='../static/dell.png' style='height:100px;width:auto;' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'ASUS' %}
+          <h1><img src='../static/asus.svg' style='height:100px;width:auto;' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'ALIENWARE' %}
+          <h1><img src='../static/alienware.png' style='height:100px;width:auto;' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'APPLE' %}
+          <h1><img src='../static/apple.png' style='height:100px;width:auto;' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'Lenovo' %}
+          <img src='../static/lenovo.png' style='height:100px;width:auto;' />
+
+          {% elif brand == 'MICROSOFT' %}
+          <h1><img src='../static/microsoft.png' style='height:100px;width:auto;' /></h1>
+
+          {% elif brand == 'MSI' %}
+          <img src='../static/msi.jpg' style='height:100px;width:auto;' />
+
+          {% elif brand == 'Mi' %}
+          <h1><img src='../static/mi.png' style='height:100px;width:auto;' />
+            {{ brand }}</h1>
+
+          {% elif brand == 'SAMSUNG' %}
+          <img src='../static/samsung.png' style='height:40px;width:auto;' />
+
+          {% else %}
+          {{ brand }}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <br>
+    <!-- SPECIFICATION DETAILS CHOOSEN BY USERS TABLE START HERE -->
+    <table class="w3-table w3-striped w3-card-4 w3-white r2">
+      <thead>
+        <tr class='w3-green'>
+          <th>Specifications</th>
+          <th>Your choosen Specifications</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Brand Name</b></td>
+          <td>
+            {{ brand }}
+          </td>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>{{ model }}</td>
+        </tr>
+        <tr>
+          <td>Processor Brand</td>
+          <td>
+            {% if processor_brand == 'AMD' %}
+            <img src='static/amd.svg' style='height:60px;width:60px;' />
+            {{ processor_brand }}
+
+            {% elif processor_brand == 'Intel' %}
+            <img src='static/Inte.png' style='height:30px;width:60px;' />
+            {{ processor_brand }}
+
+            {% elif processor_brand == 'M1' %}
+            <img src='static/m1.png' style='height:30px;width:70px;' />
+            {{ processor_brand }}
+
+            {% else %}
+            {{ processor_brand }}
+
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>Processor Name</td>
+          <td>{% print(processor_name) %}</td>
+        </tr>
+        <tr>
+          <td>Processor Generation</td>
+          <td>{% print(processor_gnrtn) %}</td>
+        </tr>
+        <tr>
+          <td>RAM and Type</td>
+          <td>{{ram}}GB | {{ram_type}}</td>
+        </tr>
+        <tr>
+          <td>SSD</td>
+          <td>
+            {% if ssd > 0 %}
+            {{ ssd }} GB
+            {% else %}
+            <span style='color:red'><img src='../static/red.png' style='height:30px;width: auto;' /> No</span>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>HDD</td>
+          <td>
+            {% if hdd > 0 %}
+            {{ hdd }} GB
+            {% else %}
+            <span style='color:red'><img src='../static/red.png' style='height:30px;width: auto;' /> No</span>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>OS</td>
+          <td>
+            {% if os == 'Windows' %}
+            <img src='static/windows.svg' style='height:50px;width:150px;' />
+
+            {% elif os == 'Mac' %}
+            <img src='static/mac.png' style='height:50px;width:auto;' />
+            {{ os }}
+
+            {% else %}
+            {{ os }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>OS Architecure</td>
+          <td>{{ os_bit }}</td>
+        </tr>
+        <tr>
+          <td>Graphics Memory</td>
+          <td>
+            {% if graphic_card_gb > 0 %}
+            {{ graphic_card_gb }} GB
+            {% else %}
+            <span style='color:red'><img src='../static/red.png' style='height:30px;width: auto;' /> No</span>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>Display</td>
+          <td>{{ display_size }} inch</td>
+        </tr>
+        <tr>
+          <td>Touchscreen</td>
+          <td>
+            {% if Touchscreen == 'Yes' %}
+            <span style='color:green'><img src="../static/tick.png" style="height:30px;" /> {{ Touchscreen }}</span>
+            {% else %}
+            <span style='color:red'><img src="../static/red.png" style="height:30px;" /> {{ Touchscreen }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>Microsoft Office</td>
+          <td>
+            {% if msoffice == 'Yes' %}
+            <span style='color:green'><img src="../static/tick.png" style="height:30px;" /> {{ msoffice }}</span>
+            {% else %}
+            <span style='color:red'><img src="../static/red.png" style="height:30px;" /> {{ msoffice }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>Total Price Expected: </td>
+          <td><b style='font-size:18px; color:green'>Rs. {{ r }}</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- TABLE ENDS HERE -->
+  <br>
+  <br>
+  <!-- SUGESSTION START TO BUY ON WEBSITE -->
+  <div class="w3-center w3-container">
+    <h1 style="color:white">Buy on Top Stores</h1>
+    <!--FLIPKART LOGO 1ST HALF-->
+    <div class='w3-half r2'>
+      <br>
+      <a href='https://www.flipkart.com/search?q=
+        {{ brand }}%20{{ model }}%20{{processor_name}}%20{{display_size}}inch%20{{ram}}GB' target="_blank">
+        <img src="../static/flipkart.svg" class='w3-white w3-card-4 w3-round r logo' />
+      </a>
+    </div>
+    <!--AMAZON LOGO 2ND HALF-->
+    <div class="w3-half r2">
+      <br>
+      <a href="https://www.amazon.in/s?k={{brand}}+{{ model }}+{{processor_name}}+{{display_size}}inch+{{ram}}GB"
+        target="_blank">
+        <img src="../static/amazon.svg" class='w3-white w3-card-4 w3-round r logo' />
+      </a>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class='w3-container w3-center'>
+    <p style='color:white;'><b>NOTE: </b>The Predicted Data might be incorrect as its in Developement Stage.</p>
+  </div>
+  <!-- FOOTER SECTION -->
+  {% extends 'footer.html' %}
+  <!--FOOTER END HERE-->
+</body>
+
+</html>

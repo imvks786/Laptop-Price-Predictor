@@ -1,0 +1,44 @@
+<html>
+<title>About</title>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="'w3-container w3-center">
+    <h1>About</h1>
+</div>
+<div class="w3-container">
+    <p><b>What is Laptop Pirce Predictor ?</b></p>
+    <p>A laptop price predictor is a model or tool that uses historical data on laptop prices and other relevant factors to predict the future price of a specific laptop or a general trend in laptop prices. It can be used by consumers to determine the best time to buy a laptop, or by businesses to make purchasing decisions. The model or tool typically employs machine learning techniques, such as linear regression or neural networks, to analyze and make predictions based on the data it has been trained on.</p>
+    <p><b>How to use it ?</b></p>
+    <p>To use a laptop price predictor, one would typically need to follow these steps:<br>
+        1. Gather information about the laptop you're interested in, including the make, model, and specifications.<br>
+        2. Input this information into the laptop price predictor tool or model.<br>
+        3. The tool will then use historical data on laptop prices and other relevant factors to make a prediction on the future price of the laptop.<br>
+        4. The prediction can be in the form of a specific price or a range of prices, and might also include information on the likelihood of the price changing, or on the most likely time for a price change to occur.<br>
+        5. Based on the prediction, you can decide whether to buy the laptop now or wait for the price to drop or go up.<br><br>
+        <b>NOTE:</b><br>
+        It's also worth to note that, predictions are never 100% accurate, and depending on the model/tool its accuracy will vary. Additionally, other factors such as currency fluctuation, supply chain disruptions, politics and so on, can also play a role in pricing. Thus It's always beneficial to check with other sources before making a final decision.</p>
+    <p><b>How it is works ?</b></p>
+    <p>Here are some general steps taken in laptop price predictor:<br>
+
+        <b>Collect data on laptop prices:</b> This may involve scraping data from online retailers or gathering data from other sources.<br>
+        
+        <b>Pre-process the data:</b> Before training the model, the data needs to be cleaned.<br>
+        
+        <b>Select a machine learning model:</b> Different types of models can be used for price prediction, such as linear regression, decision trees, Random Forest, XGBoost, LightGBM etc.<br>
+
+        <b>Train the model:</b> The model is trained on the pre-processed data, using a subset of the data for training and a separate subset for validation.<br>
+        
+        <b>Test the model:</b> Once the model is trained and fine-tuned, it can be tested on a separate test dataset to evaluate its performance.<br>
+        
+        <b>Deploy the model:</b> After the model is trained and fine-tuned, it can be deployed in the production environment.<br>
+        </p>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>
