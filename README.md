@@ -17,7 +17,7 @@ Choosing the most appropriate machine learning algorithm for the task.
 4. MODEL EVALUATION:
 Evaluating the performance of the model using metrics such as mean absolute error and R-squared.
 
-# 5. DEPLOYMENT:
+5. DEPLOYMENT:
 Developing a web or mobile application for the system and deploying it for consumer and retailer use.
 
 # A SHORT DESCRIPTION:
@@ -35,3 +35,5 @@ It is the cleaned dataset used to find the requested data form frontend user.
 • Trained_model.pkl:
 It is trained model file is used by the app.py to predict the price and loaded
 using app.py.
+
+![5](https://user-images.githubusercontent.com/56357173/213859354-102918c1-ba71-403f-9ea7-ec5a725fbc52.png)
