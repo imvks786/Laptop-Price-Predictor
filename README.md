@@ -1,3 +1,5 @@
+![logo1](https://user-images.githubusercontent.com/56357173/213859411-2e355957-a080-47e2-9db6-f97efe43070b.png)
+
 # Laptop-Price-Predictor
 
 A laptop price predictor using machine learning is a system that utilizes machine earning algorithms to analyze historical data on laptop prices and predict future rices based on that data. The system may be trained on a large dataset of past aptop sales, which includes information such as brand, model, features, and sale rices. The machine learning algorithm then uses this data to identify patterns and
@@ -17,7 +19,7 @@ Choosing the most appropriate machine learning algorithm for the task.
 4. MODEL EVALUATION:
 Evaluating the performance of the model using metrics such as mean absolute error and R-squared.
 
-# 5. DEPLOYMENT:
+5. DEPLOYMENT:
 Developing a web or mobile application for the system and deploying it for consumer and retailer use.
 
 # A SHORT DESCRIPTION:
@@ -35,3 +37,14 @@ It is the cleaned dataset used to find the requested data form frontend user.
 • Trained_model.pkl:
 It is trained model file is used by the app.py to predict the price and loaded
 using app.py.
+
+![1](https://user-images.githubusercontent.com/56357173/213859374-802bf01c-7bc9-4217-88a6-e7ac12a873a5.png)
+
+![2](https://user-images.githubusercontent.com/56357173/213859377-974b3082-8fc8-432d-9c72-11dc1d92c478.png)
+
+![4](https://user-images.githubusercontent.com/56357173/213859381-38e09952-fa61-444d-b65f-d1ee6d9929aa.png)
+
+![5](https://user-images.githubusercontent.com/56357173/213859383-de1092f0-9ee4-4bfc-ae9f-19c13249ac22.png)
+
+NOTE: THE BRAND LOGOS ARE USED IN THIS PROJECT ONLY FOR EDUCATIONAL PURPOSE AND NOT FOR ANY COMMERICAL ACTIVITY.
+
