@@ -48,3 +48,10 @@ using app.py.
 
 NOTE: THE BRAND LOGOS ARE USED IN THIS PROJECT ONLY FOR EDUCATIONAL PURPOSE AND NOT FOR ANY COMMERICAL ACTIVITY.
 
+Credits:
+CSS: https://w3schools.com/
+Logos Credits:
+Amazon: https://amazon.com/
+Flipkart: https://flipkart.com/
+Last but not Least:
+DELL, HP, LENOVO, ACER, MICROSOFT ANY MANY MORE. 
