@@ -1,3 +1,5 @@
+![logo1](https://user-images.githubusercontent.com/56357173/213859411-2e355957-a080-47e2-9db6-f97efe43070b.png)
+
 # Laptop-Price-Predictor
 
 A laptop price predictor using machine learning is a system that utilizes machine earning algorithms to analyze historical data on laptop prices and predict future rices based on that data. The system may be trained on a large dataset of past aptop sales, which includes information such as brand, model, features, and sale rices. The machine learning algorithm then uses this data to identify patterns and
