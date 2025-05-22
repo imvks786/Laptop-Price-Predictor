@@ -137,5 +137,6 @@ def get_processor():
         return jsonify(sorted(p_model))
     
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
 # Developed by Vivek Singh
