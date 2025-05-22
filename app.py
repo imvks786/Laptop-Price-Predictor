@@ -56,56 +56,56 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    print('PREDICT')
+    # brand = request.form['brand_name']
+    # model = request.form['model']
+    # processor_brand = request.form['processor_brand']
+    # processor_name = request.form['processor_name']
+    # processor_gnrtn= request.form['processor_gnrtn']
+    # ram1 = request.form['ram_gb']
+    # ram = int(ram1)
+    # ram_type = request.form['ram_type']
+    # ssd1 = request.form['ssd']
+    # ssd = int(ssd1)
+    # hdd1 = request.form['hdd']
+    # hdd = int(hdd1)
+    # os = request.form['os']
+    # os_bit = request.form['os_bit']
+    # g = request.form['graphic_card_gb']
+    # graphic_card_gb = int(g)
 
-    brand = request.form['brand_name']
-    model = request.form['model']
-    processor_brand = request.form['processor_brand']
-    processor_name = request.form['processor_name']
-    processor_gnrtn= request.form['processor_gnrtn']
-    ram1 = request.form['ram_gb']
-    ram = int(ram1)
-    ram_type = request.form['ram_type']
-    ssd1 = request.form['ssd']
-    ssd = int(ssd1)
-    hdd1 = request.form['hdd']
-    hdd = int(hdd1)
-    os = request.form['os']
-    os_bit = request.form['os_bit']
-    g = request.form['graphic_card_gb']
-    graphic_card_gb = int(g)
+    # type = request.form['type']
+    # d = request.form['display_size']
+    # display_size = float(d)
+    # Touchscreen = request.form['Touchscreen']
+    # msoffice = request.form['msoffice']
 
-    type = request.form['type']
-    d = request.form['display_size']
-    display_size = float(d)
-    Touchscreen = request.form['Touchscreen']
-    msoffice = request.form['msoffice']
-
-    result = model_train.predict(pd.DataFrame(
-        [[brand,model,processor_brand,processor_name,processor_gnrtn,ram,ram_type,ssd,hdd,os,os_bit,graphic_card_gb,
-        type,display_size,Touchscreen,msoffice]],
-        columns=['brand','model','processor_brand','processor_name','processor_gnrtn','ram_gb','ram_type','ssd','hdd','os','os_bit','graphic_card_gb','type',
-          'display_size','Touchscreen','msoffice']
-    ))
-    r = str(float(np.round((result),2)))
+    # result = model_train.predict(pd.DataFrame(
+    #     [[brand,model,processor_brand,processor_name,processor_gnrtn,ram,ram_type,ssd,hdd,os,os_bit,graphic_card_gb,
+    #     type,display_size,Touchscreen,msoffice]],
+    #     columns=['brand','model','processor_brand','processor_name','processor_gnrtn','ram_gb','ram_type','ssd','hdd','os','os_bit','graphic_card_gb','type',
+    #       'display_size','Touchscreen','msoffice']
+    # ))
+    # r = str(float(np.round((result),2)))
 
 
-    return render_template("predict.html",
-    brand=brand,
-    model=model,
-    processor_brand=processor_brand,
-    processor_name=processor_name,
-    processor_gnrtn=processor_gnrtn,
-    ram=ram,
-    ssd=ssd,
-    hdd=hdd,
-    os=os,
-    os_bit=os_bit,
-    display_size=display_size,
-    Touchscreen=Touchscreen,
-    msoffice=msoffice,
-    graphic_card_gb = graphic_card_gb,
-    ram_type = ram_type,
-    r=r)
+    # return render_template("predict.html",
+    # brand=brand,
+    # model=model,
+    # processor_brand=processor_brand,
+    # processor_name=processor_name,
+    # processor_gnrtn=processor_gnrtn,
+    # ram=ram,
+    # ssd=ssd,
+    # hdd=hdd,
+    # os=os,
+    # os_bit=os_bit,
+    # display_size=display_size,
+    # Touchscreen=Touchscreen,
+    # msoffice=msoffice,
+    # graphic_card_gb = graphic_card_gb,
+    # ram_type = ram_type,
+    # r=r)
 
 @app.route('/about')
 def about():
