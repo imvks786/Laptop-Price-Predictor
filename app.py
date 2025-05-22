@@ -6,12 +6,22 @@ import pickle
 from flask import Flask, render_template,jsonify
 from sklearn.linear_model import LinearRegression
 
+# Get the directory where the app.py file is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # LOADING THE PICKEL FILE FROM DIRECTORY.
-model_train = pickle.load(open('C:/Users/Vivek/Desktop/LAPTOP PREDICTOR PROJECT/FRONT END DATA/model_ignore_cate.pkl','rb'))
-
+# model_train = pickle.load(open('C:/Users/Vivek/Desktop/LAPTOP PREDICTOR PROJECT/FRONT END DATA/model_ignore_cate.pkl','rb'))
 # LOADING DATASET FOR FETECHING REQUIRED INFOMATIONS.
-df = pd.read_csv('C:/Users/Vivek/Desktop/LAPTOP PREDICTOR PROJECT/FRONT END DATA/final_data.csv')
+# df = pd.read_csv('C:/Users/Vivek/Desktop/LAPTOP PREDICTOR PROJECT/FRONT END DATA/final_data.csv')
+
+# Load the pickled model file from the same directory as app.py
+model_path = os.path.join(BASE_DIR, 'model_ignore_cate.pkl')
+model_train = pickle.load(open(model_path, 'rb'))
+
+# Load the dataset CSV from the same directory as app.py
+data_path = os.path.join(BASE_DIR, 'final_data.csv')
+df = pd.read_csv(data_path)
+
 
 brand = sorted(df.brand.unique())
 model = sorted(df.model.unique())
